@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mirelas Hair Salon offers professional haircuts, coloring, and styling services to enhance your beauty.">
+    <title>Mirelas Hair Salon</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-8a1BxXT2RlwvBN/ZlR9It5Z85AxSo+bWW6jGJZxaxXM7zj95gG7OlJ4CenptF1NHoW/2g9A5M9VW8HGhn/mO8A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+
+        /* Top Navigation Bar hover effect */
+        nav a {
+            position: relative;
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+            padding: 5px 10px;
+            transition: color 0.3s ease-in-out; /* Smooth transition for text color */
+        }
+
+            nav a::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: #e74c3c; /* The underline color on hover */
+                visibility: hidden;
+                transform: scaleX(0); /* Hidden by default */
+                transition: all 0.3s ease-in-out;
+            }
+
+            nav a:hover::before {
+                visibility: visible;
+                transform: scaleX(1); /* Slide in effect */
+            }
+
+            nav a:hover {
+                color: #e74c3c; /* Change text color on hover */
+            }
+
+        /* Basic reset */
+        body, h1, h2, p, a {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            line-height: 1.4;
+        }
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0; /* Reduced padding */
+        }
+
+        #branding h1 {
+            font-size: 20px; /* Reduced font size */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+            nav ul li {
+                margin: 0 10px; /* Reduced margin */
+            }
+
+                nav ul li a {
+                    text-decoration: none;
+                    color: #333;
+                    font-size: 14px; /* Reduced font size */
+                }
+
+                    nav ul li a:hover {
+                        color: #e74c3c;
+                    }
+
+        #showcase {
+            background: #ffffff;
+            color: #333;
+            text-align: center;
+            padding: 30px 20px; /* Reduced padding */
+            border-bottom: 1px solid #ddd;
+        }
+
+            #showcase h1 {
+                font-size: 24px; /* Reduced font size */
+                margin-bottom: 10px; /* Reduced margin */
+            }
+
+            #showcase p {
+                font-size: 16px; /* Reduced font size */
+                margin-bottom: 20px; /* Reduced margin */
+            }
+
+        .button {
+            background: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 8px 16px; /* Reduced padding */
+            border-radius: 4px; /* Reduced border radius */
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 14px; /* Reduced font size */
+            display: inline-block;
+        }
+
+            .button:hover {
+                background: #c0392b;
+            }
+
+        section {
+            padding: 20px 10px; /* Reduced padding */
+            background: #ffffff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h2 {
+            margin-bottom: 15px; /* Reduced margin */
+            font-size: 20px; /* Reduced font size */
+            color: #333;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px; /* Reduced gap */
+        }
+
+        .flex-item {
+            flex: 1;
+        }
+
+        .service-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px; /* Reduced gap */
+        }
+
+        .service-item {
+            flex: 1 1 calc(33% - 10px); /* Adjusted to make items smaller */
+            background: #f9f9f9;
+            margin: 5px; /* Reduced margin */
+            padding: 10px; /* Reduced padding */
+            border-radius: 4px; /* Reduced border radius */
+            text-align: center;
+        }
+
+            .service-item i {
+                font-size: 24px; /* Reduced icon size */
+                color: #e74c3c;
+                margin-bottom: 5px; /* Reduced margin */
+            }
+
+            .service-item h3 {
+                font-size: 18px; /* Reduced font size */
+                margin-bottom: 5px; /* Reduced margin */
+            }
+
+            .service-item p {
+                font-size: 14px; /* Reduced font size */
+            }
+
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px; /* Reduced gap */
+        }
+
+        .gallery-item {
+            flex: 1 1 calc(33% - 10px); /* Adjusted to make items smaller */
+            background: #f9f9f9;
+            border-radius: 4px; /* Reduced border radius */
+            overflow: hidden;
+        }
+
+            .gallery-item img {
+                width: 100%; /* Keep images responsive */
+                height: auto;
+                display: block;
+                border-radius: 4px; /* Reduced border radius */
+                max-width: 200px; /* Set a maximum width for smaller images */
+                max-height: 150px; /* Set a maximum height for smaller images */
+            }
+
+        .contact-info p {
+            margin-bottom: 5px; /* Reduced margin */
+            font-size: 14px; /* Reduced font size */
+        }
+
+        .contact-info strong {
+            color: #333;
+        }
+
+        form {
+            margin-top: 15px; /* Reduced margin */
+        }
+
+            form input, form textarea {
+                width: 100%;
+                padding: 8px; /* Reduced padding */
+                margin-bottom: 10px; /* Reduced margin */
+                border: 1px solid #ddd;
+                border-radius: 4px; /* Reduced border radius */
+                font-size: 14px; /* Reduced font size */
+            }
+
+            form button {
+                background: #e74c3c;
+                color: #fff;
+                border: none;
+                padding: 8px; /* Reduced padding */
+                border-radius: 4px; /* Reduced border radius */
+                cursor: pointer;
+                font-size: 14px; /* Reduced font size */
+            }
+
+                form button:hover {
+                    background: #c0392b;
+                }
+
+        footer {
+            background: #ffffff;
+            border-top: 1px solid #ddd;
+            padding: 10px 0; /* Reduced padding */
+            text-align: center;
+        }
+
+        .language-switcher {
+            margin: 10px 0; /* Reduced margin */
+            text-align: center;
+        }
+
+            .language-switcher button {
+                background: #333;
+                color: #fff;
+                border: none;
+                padding: 8px 15px; /* Reduced padding */
+                border-radius: 4px; /* Reduced border radius */
+                cursor: pointer;
+                font-size: 14px; /* Reduced font size */
+                margin: 0 5px; /* Reduced margin */
+            }
+
+                .language-switcher button:hover {
+                    background: #e74c3c;
+                }
+
+        @media (max-width: 768px) {
+            .gallery-item, .service-item {
+                flex: 1 1 calc(50% - 5px); /* Adjusted to make items smaller */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item, .service-item {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="Script1.js"></script>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <img src="illustration-beauty-women-and-hair-for-salon-logo-design-with-circle-shape-o.png" alt="Mirelas Hair Salon Logo" class="logo">
+                <h1 style="text-align: center;"><i class="fas fa-cut"></i> Mirelas Hair Salon</h1>dsgfsdagdafgsdf
+
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about" class="translate" data-en="About Us" data-gr="Σχετικά με εμάς">About Us</a></li>
+                    <li><a href="#services" class="translate" data-en="Our Services" data-gr="ΟΙ ΥΠΗΡΕΣΙΕΣ ΜΑΣ">Our Services</a></li>
+                    <li><a href="#gallery" class="translate" data-en="Gallery" data-gr="Γκαλερί">Gallery</a></li>
+                    <li><a href="#contact" class="translate" data-en="Contact Us" data-gr="Επικοινωνήστε μαζί μας">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div id="showcase" style="width: 100%; height: 100vh; position: relative;">
+        <div class="showcase-image" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
+            <picture>
+                <!-- Image for mobile (small screens) -->
+                <source srcset="MobilePage.jpg" media="(max-width: 768px)">
+                <!-- Image for larger screens (desktop) -->
+                <source srcset="FirstPage.jpg" media="(min-width: 769px)">
+                <!-- Fallback image for browsers that don't support the `picture` element -->
+                <img src="MobilePage.jpg" alt="Welcome to Mirelas Hair Salon" style="width: 100%; height: 100%; object-fit: cover;">
+            </picture>
+        </div>
+        <div class="showcase-text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; z-index: 10;" id="text-container">
+            <h1 class="translate" data-en="Welcome to Mirelas Hair Salon" data-gr="Καλώς ήλθατε στο κομμωτήριο Mirelas Hair Salon" style="font-size: 1.3em;" id="h1-text">
+                Welcome to Mirelas Hair Salon
+            </h1>
+            <p class="translate" data-en="Your beauty, our duty" data-gr="Η ομορφιά σου, το καθήκον μας" style="font-size: 1.6em;" id="p-text">
+                Your beauty, our duty
+            </p>
+            <a href="#contact" class="button translate" data-en="Book Appointment" data-gr="Κλείστε Ραντεβού" style="font-size: 1.6em;" id="a-text">Book Appointment</a>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="Στιγμιότυπο οθόνης (444).png" alt="About Us Image" width="300">
+                </div>
+                <div class="about-text">
+                    <h2 class="translate" data-en="About Us" data-gr="Σχετικά με Εμάς">About Us</h2>
+                    <p class="translate" data-en="Mirelas Hair Salon offers professional haircuts, coloring, and styling services to enhance your beauty. We promise that our services are worth your time and money, and once you try what Mirelas Hair Salon has to offer, you'll toss the dye in the trash and keep coming back!" data-gr="Το κομμωτήριο Mirelas προσφέρει επαγγελματικά κουρέματα, βαφές και υπηρεσίες styling για να ενισχύσει την ομορφιά σας. Υποσχόμαστε ότι οι υπηρεσίες μας αξίζουν το χρόνο και τα χρήματά σας, και μόλις δοκιμάσετε αυτό που έχει να προσφέρει το Mirelas Hair Salon, θα πετάξετε τη βαφή στα σκουπίδια και θα συνεχίσετε να επιστρέφετε!">
+                        Mirelas Hair Salon offers professional haircuts, coloring, and styling services to enhance your beauty. We promise that our services are worth your time and money, and once you try what Mirelas Hair Salon has to offer, you'll toss the dye in the trash and keep coming back!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="services">
+        <div class="container">
+            <h2 class="translate" data-en="Our Services" data-gr="ΟΙ ΥΠΗΡΕΣΙΕΣ ΜΑΣ">Our Services</h2>
+            <div class="service-list">
+                <div class="service-item">
+                    <i class="fas fa-cut"></i>
+                    <h3 class="translate" data-en="Haircut" data-gr="Κούρεμα">Haircut</h3>
+                    <p class="translate" data-en="Special styling services for all occasions, making you look your best." data-gr="Ειδικές υπηρεσίες styling για όλες τις περιπτώσεις, κάνοντάς σας να φαίνεστε καλύτερα.">
+                        Special styling services for all occasions, making you look your best.
+                    </p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3 class="translate" data-en="Hair Coloring" data-gr="Χρωματισμός Μαλλιών">Hair Coloring</h3>
+                    <p class="translate" data-en="Professional hair coloring to reveal your shine." data-gr="Επαγγελματική βαφή μαλλιών για να αποκαλύψει τη λάμψη σας.">
+                        Professional hair coloring to reveal your shine.
+                    </p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-male"></i>
+                    <h3 class="translate" data-en="Men's Haircuts" data-gr="Ανδρικά Κούρεμα">Men's Haircuts</h3>
+                    <p class="translate" data-en="Precision cuts tailored to your style and preferences." data-gr="Κοψίματα ακριβείας προσαρμοσμένα στο στυλ και τις προτιμήσεις σας.">
+                        Precision cuts tailored to your style and preferences.
+                    </p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-smile"></i>
+                    <h3 class="translate" data-en="Everything" data-gr="Τα πάντα">Everything</h3>
+                    <p class="translate" data-en="Comprehensive hair care services to meet all your needs." data-gr="Ολοκληρωμένες υπηρεσίες περιποίησης μαλλιών για την κάλυψη όλων των αναγκών σας.">
+                        Comprehensive hair care services to meet all your needs.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="gallery">
+        <div class="container">
+            <h2 class="translate" data-en="Gallery" data-gr="Γκαλερί">Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Στιγμιότυπο οθόνης (444).png" alt="Gallery Image 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="Στιγμιότυπο οθόνης (445).png" alt="Gallery Image 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="Στιγμιότυπο οθόνης (446).png" alt="Gallery Image 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="Στιγμιότυπο οθόνης (448).png" alt="Gallery Image 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="contact" class="contact" style="background-color: white; padding: 20px;">
+        <!-- Container for both the contact info and Instagram logo -->
+        <div style="display: flex; justify-content: center; align-items: center; padding: 10px; background-color: white;">
+            <!-- Instagram Logo aligned to the center with some space -->
+            <div style="margin-right: 20px; background-color: white;">
+                <img src="instagram-logo-3d-illustration-free-png.png" alt="Instagram Logo" width="100" style="display: block;">
+            </div>
+
+            <!-- Contact Info aligned to the center -->
+            <div style="text-align: left; background-color: white;">
+                <p style="margin: 0; padding: 5px;"><strong class="translate" data-en="Phone:" data-gr="Τηλέφωνο:">Phone:</strong> +2105982922</p>
+                <p style="margin: 0; padding: 5px;"><strong class="translate" data-en="Address:" data-gr="Διεύθυνση:">Address:</strong> Τζων Κέννεντυ</p>
+                <p style="margin: 0; padding: 5px;"><strong class="translate" data-en="Email:" data-gr="Email:">Email:</strong> mirelaforyousalon@gmail.com</p>
+            </div>
+        </div>
+        <br>
+        <!-- Button to Send Message (Redirect to Instagram) -->
+        <button type="button" class="translate" data-en="Send Message" data-gr="Στείλτε μήνυμα" onclick="window.location.href='https://www.instagram.com/mirelas_hairs/';">
+            Send Message
+        </button>
+
+        <!-- Footer -->
+        <footer style="background-color: white; text-align: center; padding: 10px 0;">
+            <div class="container">
+                <p class="translate" data-en="&copy; 2024 Mirelas Hair Salon. All Rights Reserved." data-gr="&copy; 2024 Κομμωτήριο MirelaHairs. Με επιφύλαξη παντός δικαιώματος.">
+                    &copy; 2024 Mirelas Hair Salon. All Rights Reserved.
+                </p>
+            </div>
+        </footer>
+    </section>
+
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button onclick="switchLanguage('en')">English</button>
+        <button onclick="switchLanguage('gr')">Ελληνικά</button>
+    </div>
+
+    <!-- JavaScript for Language Switching -->
+    <script>
+        // Function to translate the text content based on the selected language
+        function translateTo(language) {
+            const elements = document.querySelectorAll('.translate');
+            elements.forEach(el => {
+                el.textContent = el.getAttribute(`data-${language}`);
+            });
+        }
+
+        // Automatically set the language to Greek when the page loads
+        window.onload = function () {
+            translateTo('gr'); // Set to Greek by default
+        };
+
+        // Function to switch languages via the buttons
+        function switchLanguage(language) {
+            translateTo(language);
+        }
+    </script>
+
+
+</body>
+</html>

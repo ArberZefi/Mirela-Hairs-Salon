@@ -1,0 +1,871 @@
+﻿/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 10px 0;
+    border-bottom: #e74c3c 3px solid;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    flex-grow: 1;
+    padding-bottom: 60px; /* To give space for footer */
+}
+
+/* Showcase */
+#showcase {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+.showcase-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+    .showcase-image picture,
+    .showcase-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensure image covers the container */
+    }
+
+.showcase-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+}
+
+    .showcase-text h1,
+    .showcase-text p {
+        margin: 10px 0;
+        font-size: 24px; /* Adjusted for mobile */
+    }
+
+    .showcase-text a {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #2c3e50;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+        .showcase-text a:hover {
+            background-color: #e74c3c;
+        }
+
+/* Mobile Adjustments for Showcase */
+@media (max-width: 768px) {
+    #showcase {
+        height: 70vh;
+    }
+
+    .showcase-text h1 {
+        font-size: 20px;
+    }
+
+    .showcase-text p {
+        font-size: 16px;
+    }
+
+    .showcase-text a {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+/* Footer */
+footer {
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    position: relative;
+    margin-top: auto;
+}
+
+/* Language Switcher */
+.language-switcher {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    gap: 10px;
+}
+
+    .language-switcher button {
+        color: white;
+        background: #2c3e50;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+        .language-switcher button:hover {
+            background: #e74c3c;
+            transform: scale(1.05);
+        }
+
+/* Instagram Logo */
+.instagram-logo {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Contact Info */
+.contact-info {
+    margin-bottom: 20px;
+}
+
+    .contact-info p {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+
+    .contact-info strong {
+        font-weight: bold;
+    }
+
+/* Mobile Styling for Instagram Logo */
+@media (max-width: 768px) {
+    .instagram-logo {
+        max-width: 100px;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+
+    .instagram-logo {
+        max-width: 80px;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+    }
+
+    .language-switcher button {
+        padding: 8px 12px;
+    }
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #branding h1 {
+        font-size: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav li {
+        padding: 10px 0;
+    }
+
+    .service-item {
+        flex: 1 1 100%;
+        margin: 10px 0;
+    }
+
+    .gallery-item {
+        flex: 1 1 100%;
+    }
+
+    #about .about-content {
+        flex-direction: column;
+    }
+
+    #about .about-image {
+        order: -1;
+    }
+
+    #showcase {
+        min-height: 400px;
+        text-align: center;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+        #showcase .showcase-text h1 {
+            font-size: 2rem;
+        }
+
+        #showcase .showcase-text p {
+            font-size: 1.2rem;
+        }
+
+    .gallery-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery-item {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+
+    /* About Section */
+    #about .about-text {
+        padding: 20px;
+        text-align: center;
+    }
+
+    #about .about-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Contact Form Adjustments */
+    #contact form {
+        padding: 10px;
+        width: 90%;
+        margin: auto;
+    }
+
+    #contact input, #contact textarea {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 10px 0;
+    }
+}
+#showcase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    position: relative;
+    overflow: hidden;
+}
+
+.showcase-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover; /* Ensures the image covers the entire area */
+}
+
+.showcase-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10; /* Ensures the text is above the image */
+}
+
+.showcase-text h1,
+.showcase-text p,
+.showcase-text a {
+    margin: 10px 0;
+}
+
+/* Make sure the images are responsive */
+@media (max-width: 768px) {
+    .showcase-image {
+        object-fit: cover;
+    }
+}
+
+/* Gallery Section */
+#gallery {
+    padding: 50px 0;
+    background: #ecf0f1; /* Background color of the section */
+    text-align: center;
+}
+
+    #gallery h2 {
+        margin-bottom: 30px;
+        font-size: 30px;
+        color: #333;
+        animation: slideInUp 1s ease-in;
+    }
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Space between gallery items */
+    gap: 0; /* No gap between gallery items */
+}
+
+.gallery-item {
+    flex: 1 1 calc(25% - 0); /* Adjust width based on 4 items per row, no gap */
+    max-width: 250px; /* Ensure no excessive width */
+    background: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .gallery-item img {
+        width: 100%; /* Image takes up full container width */
+        height: 100%; /* Image takes up full container height */
+        display: block;
+        object-fit: cover; /* Ensure image fills the container */
+        border: none;
+    }
+
+    /* Hover effects for gallery items */
+    .gallery-item:hover {
+        transform: scale(1.03); /* Slight zoom effect on hover */
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    }
+
+    .gallery-item img:hover {
+        transform: scale(1.02); /* Subtle zoom effect on image hover */
+    }
+
+/* Keyframes for text fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animation to header text */
+header h1,
+nav ul li a {
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 1s ease-out forwards;
+}
+
+/* Staggered animation for navigation links */
+nav ul li a {
+    animation-delay: 0.3s; /* Delay for each link */
+}
+
+/* Add more delay for subsequent links */
+nav ul li:nth-child(2) a {
+    animation-delay: 0.6s;
+}
+
+nav ul li:nth-child(3) a {
+    animation-delay: 0.9s;
+}
+
+nav ul li:nth-child(4) a {
+    animation-delay: 1.2s;
+}
+
+/* Keyframes for text slide-in animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Apply animation to header text */
+header h1,
+nav ul li a {
+    opacity: 0; /* Start invisible */
+    animation: slideIn 1s ease-out forwards;
+}
+
+/* Staggered animation for navigation links */
+nav ul li a {
+    animation-delay: 0.3s; /* Delay for each link */
+}
+
+/* Add more delay for subsequent links */
+nav ul li:nth-child(2) a {
+    animation-delay: 0.6s;
+}
+
+nav ul li:nth-child(3) a {
+    animation-delay: 0.9s;
+}
+
+nav ul li:nth-child(4) a {
+    animation-delay: 1.2s;
+}
+
+#branding {
+    display: flex;
+    align-items: center;
+}
+
+    #branding .logo {
+        width: 120px; /* Larger logo size */
+        height: auto;
+        margin-right: 15px; /* Space between logo and text */
+    }
+
+    #branding h1 {
+        margin: 0;
+        font-size: 24px;
+        text-align: center;
+        flex: 1; /* Take up remaining space */
+    }
+
+nav {
+    display: flex;
+    flex: 2; /* Make nav section wider */
+    justify-content: center; /* Center the nav items */
+}
+
+    nav ul {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        margin: 0;
+    }
+
+    nav li {
+        padding: 0 20px;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+
+        nav a:hover {
+            color: #e74c3c;
+        }
+
+/* Showcase */
+#showcase {
+    min-height: 600px;
+    background: url('salon.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.showcase-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.showcase-text {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: #fff;
+    max-width: 500px;
+}
+
+    .showcase-text h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .showcase-text p {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+.button {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+    .button:hover {
+        background: #c0392b;
+        transform: scale(1.1);
+    }
+
+/* About Section */
+#about {
+    padding: 50px 0;
+    background: #ecf0f1;
+}
+
+    #about .about-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #about .about-text {
+        flex: 1;
+        padding: 20px;
+        text-align: center;
+    }
+
+        #about .about-text h2 {
+            margin-bottom: 20px;
+            font-size: 30px;
+            color: #333;
+        }
+
+        #about .about-text p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+    #about .about-image {
+        flex: 1;
+        padding: 20px;
+        text-align: center;
+    }
+
+        #about .about-image img {
+            max-width: 80%; /* Adjust size as needed */
+            height: auto;
+            border-radius: 10px;
+        }
+
+/* Services Section */
+#services {
+    background: #f4f4f9;
+    padding: 50px 0;
+    text-align: center;
+}
+
+    #services h2 {
+        margin-bottom: 30px;
+        font-size: 30px;
+        color: #333;
+    }
+
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.service-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 calc(33% - 40px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+    .service-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-item h3 {
+        margin-top: 0;
+        font-size: 24px;
+        color: #333;
+    }
+
+    .service-item p {
+        margin-bottom: 0;
+    }
+
+    .service-item i {
+        font-size: 50px;
+        color: #e74c3c;
+        margin-bottom: 10px;
+    }
+
+/* Gallery Section */
+#gallery {
+    padding: 50px 0;
+    background: #ecf0f1;
+    text-align: center;
+}
+
+    #gallery h2 {
+        margin-bottom: 30px;
+        font-size: 30px;
+        color: #333;
+    }
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-item {
+    flex: 1 1 23%; /* Adjust the width to fit 4 images in a row */
+    max-width: 250px; /* Optional: Set a max-width for consistency */
+    margin: 10px; /* Use margin to add spacing between items */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #fff; /* Ensure the background color matches the container */
+}
+
+    .gallery-item img {
+        width: 100%; /* Ensure the image takes up full width */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensure the image covers the container */
+    }
+
+/* Contact Section */
+#contact {
+    padding: 50px 0;
+    background: #f4f4f9;
+    text-align: center;
+}
+
+    #contact .contact-info {
+        margin-bottom: 30px;
+    }
+
+    #contact form {
+        max-width: 600px;
+        margin: auto;
+    }
+
+    #contact input, #contact textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    #contact button {
+        background: #2c3e50;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+        #contact button:hover {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+/* Footer */
+footer {
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #branding {
+        margin-bottom: 10px;
+    }
+
+        #branding h1 {
+            font-size: 20px;
+        }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    .service-item {
+        flex: 1 1 100%;
+    }
+
+    .gallery-item {
+        flex: 1 1 100%;
+    }
+
+    #about .about-content {
+        flex-direction: column;
+    }
+
+    #about .about-image {
+        order: -1; /* Move image to the top on smaller screens */
+    }
+   /* Gallery Section */
+#gallery {
+    padding: 50px 0;
+    background: #ecf0f1;
+    text-align: center;
+}
+
+#gallery h2 {
+    margin-bottom: 30px;
+    font-size: 30px;
+    color: #333;
+    animation: slideInUp 1s ease-in;
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adjust alignment */
+    gap: 20px; /* Adds space between gallery items */
+}
+
+.gallery-item {
+    flex-basis: calc(25% - 20px); /* Adjust size to fit 4 items per row */
+    max-width: 250px; /* Limit maximum width for consistency */
+    background: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%; /* Ensures the image takes up full width */
+    height: auto; /* Maintains the aspect ratio */
+    display: block;
+    object-fit: cover; /* Ensures the image covers the container */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+/* Hover effects for gallery items */
+.gallery-item:hover {
+    transform: scale(1.03); /* Slight zoom effect on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.gallery-item img:hover {
+    transform: scale(1.02); /* Slight zoom effect on image hover */
+}
+
+    footer {
+        background-color: #f0f0f0; /* Light grey background */
+        padding: 20px 0; /* Adjust the padding as needed */
+        text-align: center; /* Centers the text */
+        color: #333; /* Dark text for contrast */
+    }
+
+        footer .container {
+            max-width: 1200px;
+            margin: 0 auto; /* Centers the content inside the container */
+            padding: 0 20px;
+        }
+    .footer p.translate {
+        color: #fff;
+        font-size: 14px;
+        /* Add the grey background here */
+        background-color: #808080;
+    }
+
+}
